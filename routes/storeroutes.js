@@ -20,7 +20,7 @@ routes.delete('/:id',
     deleteone  
 )
 
-routes.patch('/:id',()=>
+routes.patch('/:id',
     updateitem
 )
 

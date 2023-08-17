@@ -1,5 +1,7 @@
 const express =  require('express')
 
+const path = require('path')
+
 const dotenv = require('dotenv').config()
 
 const { default:mongoose } = require('mongoose')
@@ -21,6 +23,12 @@ app.use('/',(req,res,next) => {
 
 app.use('/api/items', storeroutes)
 app.use('/api/system', systemroutes)
+
+app.use(express.static(path.join(__dirname, '../client/build')))
+
+app.get('*', (req, res)=>{
+    res.sendFile(path.join(__dirname, '../client/build/index.html'))
+})
 
 mongoose.connect(
     process.env.MONGOOSE
