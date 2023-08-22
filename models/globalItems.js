@@ -2,7 +2,7 @@ const { default:mongoose } = require('mongoose')
 
 const schema = mongoose.Schema
 
-const details = new schema({
+const globalSchema = new schema({
 
     title:{
         type:String,
@@ -22,11 +22,8 @@ const details = new schema({
     },
     image:{
         type:String
-    },
-    createId:{
-        type:String
     }
-  },{timestamps:true}
+},{timestamps:true}
 )
 
-module.exports = mongoose.model('store', details)
+module.exports = mongoose.model('Global', globalSchema)
