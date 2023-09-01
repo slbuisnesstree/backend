@@ -27,7 +27,7 @@ const createSystem = async (req,res) => {
     const {adress,idnum,phonenum,order,img,title,phoneOrder,quantity} = req.body
 
     try{
-       const back = await systemitems.create({adress,idnum,phonenum,order,img,title,phoneOrder.quantity})
+       const back = await systemitems.create({adress,idnum,phonenum,order,img,title,phoneOrder,quantity})
        res.status(200).json(back)
     }
     catch(error){
