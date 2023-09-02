@@ -18,10 +18,12 @@ const userroutes = require('./routes/users')
 
 const toprated = require('./routes/topRated')
 
+const cartRoutes = require('./routes/cart')
+
 const app = express()
 
 app.use(cors({
-    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders'],
+    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','https://slbuisnesstree.netlify.app/cart','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders', 'http://localhost:3000/cart'],
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
 }))
 
@@ -37,6 +39,7 @@ app.use('/api/system', systemroutes)
 app.use('/api/users', userroutes)
 app.use('/api/global', globalroutes)
 app.use('/api/toprated', toprated)
+app.use('/api/cart', cartRoutes)
 
 mongoose.connect(
     process.env.MONGOOSE
