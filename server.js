@@ -23,7 +23,7 @@ const cartRoutes = require('./routes/cart')
 const app = express()
 
 app.use(cors({
-    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','https://slbuisnesstree.netlify.app/cart','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders', 'http://localhost:3000/cart'],
+    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','https://slbuisnesstree.netlify.app/cart','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order', 'http://localhost:3000/order/back/getorders', 'http://localhost:3000/cart','https://slbusinesstree.netlify.app', 'https://slbusinesstree.netlify.app/login', 'https://slbusinesstree.netlify.app/signup', 'https://slbusinesstree.netlify.app/global', 'https://slbusinesstree.netlify.app/order', 'https://slbusinesstree.netlify.app/order/back/getorders','https://slbusinesstree.netlify.app/cart'],
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
 }))
 
