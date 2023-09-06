@@ -8,6 +8,10 @@ const routes = express.Router()
 
 routes.use(requireAuth)
 
+routes.get('/mine',
+    getMine
+)
+
 routes.get('/',
     getitems
 )
@@ -28,8 +32,5 @@ routes.patch('/:id',
     updateitem
 )
 
-routes.get('/mine',
-    getMine
-)
 
 module.exports = routes
