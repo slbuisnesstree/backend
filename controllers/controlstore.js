@@ -73,7 +73,7 @@ const updateitem = async (req,res) => {
 const getMine = async (req, res) => {
 
     const user_id = req.user._id
-    const mine = await details.find({ user_id }).sort({ createdAt:+1 })
+    const mine = await details.find({ user_id })
     res.status(200).json(mine)
 }
 
