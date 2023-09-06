@@ -6,6 +6,8 @@ const requireAuth = require('../middleware/requireAuth')
 
 const routes = express.Router()
 
+routes.use(requireAuth)
+
 routes.get('/',
     getitems
 )
