@@ -28,8 +28,10 @@ const createitem = async (req,res) => {
 
     const {title,prize,description,phone,image,createId,itemsLeft} = req.body
 
+    const user_id = req.user._id
+
     try {
-        const items = await details.create({title,prize,description,phone,image,createId,itemsLeft})
+        const items = await details.create({title,prize,description,phone,image,createId,itemsLeft,user_id})
         res.status(200).json(items)
 
     }catch (error) {
