@@ -68,6 +68,12 @@ const updateitem = async (req,res) => {
     res.status(200).json(items)
 
 }
+const getMine = async (req, res) => {
+
+    const user_id = req.user._id
+    const mine = await details.find({ user_id }).sort({ createdAt:+1 })
+    res.status(200).json(mine)
+}
 
 module.exports = {
 
@@ -75,6 +81,7 @@ module.exports = {
     getitem,
     createitem,
     deleteone,
-    updateitem
+    updateitem,
+    getMine
 
 }
