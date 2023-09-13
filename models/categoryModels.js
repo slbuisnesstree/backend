@@ -11,6 +11,10 @@ const categorySchema = new schema({
     bgImage:{
         type:String,
         required:true
+    },
+    value:{
+        type:String,
+        required:true
     }
 },{timestamps:true}
 )
