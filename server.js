@@ -20,10 +20,12 @@ const toprated = require('./routes/topRated')
 
 const cartRoutes = require('./routes/cart')
 
+const categoryRoutes = require('./routes/categories')
+
 const app = express()
 
 app.use(cors({
-    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','https://slbuisnesstree.netlify.app/cart','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order','http://localhost:3000/search', 'http://localhost:3000/order/back/getorders', 'http://localhost:3000/cart','http://localhost:3000/mine','http://localhost:3000/update/:id','http://localhost:3000/description','http://localhost:3000/category/:name','https://slbusinesstree.netlify.app', 'https://slbusinesstree.netlify.app/login', 'https://slbusinesstree.netlify.app/signup', 'https://slbusinesstree.netlify.app/global', 'https://slbusinesstree.netlify.app/order', 'https://slbusinesstree.netlify.app/order/back/getorders','https://slbusinesstree.netlify.app/cart', 'https://slbusinesstree.netlify.app/mine','https://slbusinesstree.netlify.app/update/:id','https://slbusinesstree.netlify.app/search','https://slbusinesstree.netlify.app/description', 'https://slbusinesstree.netlify.app/category/:name'],
+    origin:['https://slbuisnesstree.netlify.app', 'https://slbuisnesstree.netlify.app/login', 'https://slbuisnesstree.netlify.app/signup', 'https://slbuisnesstree.netlify.app/global', 'https://slbuisnesstree.netlify.app/order', 'https://slbuisnesstree.netlify.app/order/back/getorders','https://slbuisnesstree.netlify.app/cart','http://localhost:3000', 'http://localhost:3000/login', 'http://localhost:3000/signup', 'http://localhost:3000/global', 'http://localhost:3000/order','http://localhost:3000/search', 'http://localhost:3000/order/back/getorders', 'http://localhost:3000/cart','http://localhost:3000/mine','http://localhost:3000/update/:id','http://localhost:3000/description','http://localhost:3000/category/:name','http://localhost:3000/categories','https://slbusinesstree.netlify.app', 'https://slbusinesstree.netlify.app/login', 'https://slbusinesstree.netlify.app/signup', 'https://slbusinesstree.netlify.app/global', 'https://slbusinesstree.netlify.app/order', 'https://slbusinesstree.netlify.app/order/back/getorders','https://slbusinesstree.netlify.app/cart', 'https://slbusinesstree.netlify.app/mine','https://slbusinesstree.netlify.app/update/:id','https://slbusinesstree.netlify.app/search','https://slbusinesstree.netlify.app/description', 'https://slbusinesstree.netlify.app/category/:name', 'http://localhost:3000/categories'],
     methods: ['GET', 'POST', 'DELETE', 'PATCH']
 }))
 
@@ -40,6 +42,7 @@ app.use('/api/users', userroutes)
 app.use('/api/global', globalroutes)
 app.use('/api/toprated', toprated)
 app.use('/api/cart', cartRoutes)
+app.use('/api/categories', categoryRoutes)
 
 mongoose.connect(
     process.env.MONGOOSE
