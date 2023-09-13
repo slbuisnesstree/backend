@@ -9,10 +9,10 @@ const getCategories = async (req, res) => {
 
 const createCategory = async (req, res) => {
 
-    const {category, bgImage} = req.body 
+    const {category, bgImage, value} = req.body 
 
     try {
-        const categ = await categories.create({category, bgImage})
+        const categ = await categories.create({category, bgImage, value})
         res.status(200).json(categ)
     } catch (error) {
         res.status(401).json({error:error.message})
