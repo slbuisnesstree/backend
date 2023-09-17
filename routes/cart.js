@@ -14,8 +14,8 @@ router.get('/:id', getcart)
 
 router.post('/', createcart)
 
-router.delete('/', deletecart)
+router.delete('/:id', deletecart)
 
-router.patch('/', updatecart)
+router.patch('/:id', updatecart)
 
 module.exports = router
