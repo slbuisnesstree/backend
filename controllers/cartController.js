@@ -53,9 +53,9 @@ const deletecart = async (req,res) =>{
 
     const carts = await cart.findByIdAndDelete({_id:id})
 
-    if(!mongoose.Types.ObjectId.isValid({_id: id})){
-        res.status(404).json('error')
-    }
+    // if(!mongoose.Types.ObjectId.isValid({_id: id})){
+    //     res.status(404).json('error')
+    // }
 
     if(!carts){
         res.status(404).json('empty list')
@@ -73,9 +73,9 @@ const updatecart = async (req,res) => {
         ...req.body
     })
 
-    if(!mongoose.Types.ObjectId.isValid({_id: id})){
-        res.status(404).json('error')
-    }
+    // if(!mongoose.Types.ObjectId.isValid({_id: id})){
+    //     res.status(404).json('error')
+    // }
 
     if(!carts){
         res.status(404).json('empty list')
