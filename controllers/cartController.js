@@ -18,9 +18,9 @@ const getcart = async (req,res) => {
 
     const carts = await cart.findById(id)
 
-    if(!mongoose.Types.ObjectId.isValid({_id: id})){
-        res.status(404).json('error')
-    }
+    // if(!mongoose.Types.ObjectId.isValid({_id: id})){
+    //     res.status(404).json('error')
+    // }
 
     if(!carts){
         res.status(404).json('empty list')
