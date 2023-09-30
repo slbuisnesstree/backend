@@ -1,16 +1,8 @@
 const express =  require('express')
 
-const { getitems, getitem, createitem, deleteone, updateitem, getMine } = require('../controllers/controlstore')
-
-const requireAuth = require('../middleware/requireAuth')
+const { getitems, getitem, deleteone, updateitem } = require('../controllers/controlstore')
 
 const routes = express.Router()
-
-routes.use(requireAuth)
-
-routes.get('/mine',
-    getMine
-)
 
 routes.get('/',
     getitems
@@ -18,10 +10,6 @@ routes.get('/',
 
 routes.get('/:id',
     getitem
-)
-
-routes.post('/',
-    createitem
 )
 
 routes.delete('/:id',
