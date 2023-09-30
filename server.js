@@ -22,6 +22,8 @@ const cartRoutes = require('./routes/cart')
 
 const categoryRoutes = require('./routes/categories')
 
+const adminRoutes = require('./routes/admin')
+
 const app = express()
 
 app.use(cors({
@@ -43,6 +45,7 @@ app.use('/api/global', globalroutes)
 app.use('/api/toprated', toprated)
 app.use('/api/cart', cartRoutes)
 app.use('/api/categories', categoryRoutes)
+app.use('/api/admin', adminRoutes)
 
 mongoose.connect(
     process.env.MONGOOSE
