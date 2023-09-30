@@ -24,23 +24,6 @@ const getitem = async (req,res) => {
 
 }
 
-const createitem = async (req,res) => {
-
-    const {title,prize,description,phone,image,createId,itemsLeft,category} = req.body
-
-    const user_id = req.user._id
-
-    try {
-        const items = await details.create({title,prize,description,phone,image,createId,itemsLeft,category,user_id})
-        res.status(200).json(items)
-
-    }catch (error) {
-
-        res.status(404).json({ error:error.message })
-        
-    }
-}
-
 const deleteone = async (req,res) =>{
 
     const { id } = req.params
@@ -69,12 +52,6 @@ const updateitem = async (req,res) => {
 
     res.status(200).json(items)
 
-}
-const getMine = async (req, res) => {
-
-    const user_id = req.user._id
-    const mine = await details.find({ user_id })
-    res.status(200).json(mine)
 }
 
 module.exports = {
