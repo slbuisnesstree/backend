@@ -58,9 +58,7 @@ module.exports = {
 
     getitems,
     getitem,
-    createitem,
     deleteone,
     updateitem,
-    getMine
 
 }
